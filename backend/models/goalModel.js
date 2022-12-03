@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 
-const goalSchema = (mongoose.Schema = mongoose.Schema(
+const goalSchema = mongoose.Schema(
   {
     text: {
       type: String,
@@ -10,6 +10,6 @@ const goalSchema = (mongoose.Schema = mongoose.Schema(
   {
     timestamps: true,
   }
-))
+)
 
 module.exports = mongoose.model('Goal', goalSchema)
