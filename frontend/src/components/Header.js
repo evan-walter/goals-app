@@ -30,7 +30,7 @@ function Header() {
           <>
             <li>
               <Link to='/login'>
-                <FaUser /> Login
+                <FaSignInAlt /> Login
               </Link>
             </li>
             <li>
