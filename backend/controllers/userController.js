@@ -47,7 +47,7 @@ const registerUser = asyncHandler(async (req, res) => {
 })
 
 // @desc    Authenticate a user
-// @route   POST /api/login
+// @route   POST /api/users/login
 // @access  Public
 const loginUser = asyncHandler(async (req, res) => {
   const { email, password } = req.body
@@ -75,9 +75,11 @@ const getMe = asyncHandler(async (req, res) => {
   res.status(200).json(req.user)
 })
 
-// Generate AWT
+// Generate JWT
 const generateToken = (id) => {
-  return jwt.sign({ id }, process.env.JWT_SECRET, { expiresIn: '30d' })
+  return jwt.sign({ id }, process.env.JWT_SECRET, {
+    expiresIn: '30d',
+  })
 }
 
 module.exports = {
